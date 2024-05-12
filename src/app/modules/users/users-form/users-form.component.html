@@ -1,0 +1,64 @@
+<app-spinner *ngIf="loading"></app-spinner>
+
+<div class="nav breadcrumbs">
+    <ul>
+        <li>
+            <a mat-mini-fab color="primary" [routerLink]="['/main']">
+                <mat-icon>home</mat-icon>
+            </a>
+            <p>
+                Home
+            </p>
+        </li>
+        ❯
+        <li>
+            <a mat-mini-fab color="primary" [routerLink]="['/main/users']">
+                <mat-icon>accessibility</mat-icon>
+            </a>
+            <p>
+                Lista Usuarios
+            </p>
+        </li>
+    </ul>
+</div>
+
+<mat-card *ngIf="form">
+    <form [formGroup]="form" class="form-card">
+        <mat-card-header class="form-header-card">
+            <mat-card-title>USUARIOS</mat-card-title>
+            <mat-card-subtitle>Nuevo</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <div fxLayout="column wrap" fxLayout.lt-sm="column" fxLayoutGap="32px grid" fxLayoutAlign="center">
+                <div fxLayout="row wrap" fxLayoutGap="32px grid" fxLayoutAlign="center">
+
+                    <mat-form-field fxFlex="95" fxFlex.gt-md="95" class="form-field" appearance="outline">
+                        <mat-label> Nombre
+                        </mat-label>
+                        <input matInput formControlName="name" matInput autocomplete="off">
+                    </mat-form-field>
+
+                    <mat-form-field fxFlex="95" fxFlex.gt-md="95" class="form-field" appearance="outline">
+                        <mat-label> Email
+                        </mat-label>
+                        <input matInput formControlName="email" matInput autocomplete="off">
+                    </mat-form-field>
+
+                    <mat-checkbox fxFlex="95" fxFlex.gt-md="10" class="form-field" formControlName="isActive">
+                        Activo
+                    </mat-checkbox>
+
+                    <mat-checkbox fxFlex="95" fxFlex.gt-md="10" class="form-field" formControlName="emailConfirmed">
+                        Correo Confirmado
+                    </mat-checkbox>
+
+                </div>
+            </div>
+        </mat-card-content>
+
+        <mat-card-actions>
+            <button [disabled]="form.invalid" type="submit" mat-raised-button color="primary">Guardar</button>
+            <button mat-raised-button (click)="goBack()" type="button">Cancelar</button>
+        </mat-card-actions>
+    </form>
+</mat-card>

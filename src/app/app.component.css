@@ -1,0 +1,26 @@
+/* Estilos para el título del navbar */
+.navbar-title {
+    font-size: 24px; /* Tamaño de fuente */
+    font-weight: bold; /* Negrita */
+    color: white; /* Color del texto */
+  }
+  
+  /* Estilos para el espaciador flexible */
+  .flexible-spacer {
+    flex: 1; /* Ocupa todo el espacio disponible */
+  }
+  
+  /* Estilos para los enlaces del navbar */
+  .mat-tab-link {
+    color: white; /* Color del texto */
+    font-size: 18px; /* Tamaño de fuente */
+    text-transform: uppercase; /* Convertir el texto a mayúsculas */
+    margin-right: 20px; /* Espacio entre los enlaces */
+  }
+  
+  /* Estilos para los enlaces del navbar al ser activos */
+  .mat-tab-link-active {
+    font-weight: bold; /* Negrita para indicar el enlace activo */
+  }
+  
+  
